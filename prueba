@@ -1,0 +1,44 @@
+1
+23
+333
+
+
+
+fs = require('fs');
+
+var getRow = function (err,row) {
+    if (err) {
+        return console.log(err);
+    }
+    console.log(row);
+    getLen(row);
+    //return row;
+};
+
+
+var getLen = function (word) {
+   
+};
+
+
+fs.readFile('./prueba', 'utf8', getRow);
+
+console.log(lengWords);
+
+
+
+
+var jWords = {};
+
+
+var lineReader = require('readline').createInterface({
+    input: require('fs').createReadStream('./words.txt')
+});
+
+lineReader.on('line', function (line) {
+    jWords[line] = line.length;
+});
+
+
+console.log(jWords);
+
